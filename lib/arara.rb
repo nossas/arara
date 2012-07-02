@@ -7,7 +7,7 @@ module Arara
     URL = "http://verdadeouconsequencia.org.br/questions.json"
 
     def self.find_all_by_category_id category_id, options = {}
-      JSON.parse(HTTParty.get(URL, :query => {:token => ENV["VOC_TOKEN"], :category_id => category_id}.merge(options)).body)
+      JSON.parse(HTTParty.get(URL, :query => {:token => ENV["VOC_TOKEN"], :by_category_id => category_id}.merge(options)).body)
     end
   end
 end
